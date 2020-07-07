@@ -1,5 +1,11 @@
 html {
   font-size: 10px;
+  font-family: "sans-serif";
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 h1 {
@@ -37,5 +43,32 @@ h1 {
   flex-basis: calc(33.333% - 4rem);
   padding: 20px;
   flex-grow: 1;
-  margin: 0px 2rem 2rem 2rem;
+}
+
+.photo-container {
+  max-height: 200px;
+}
+
+.photo {
+  width: calc(100% + 4rem);
+  margin: -2rem 0rem 0rem -2rem;
+  border-bottom: 2px solid #d3d3d3;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.remove-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-button {
+  color: red;
+  flex-basis: 48%;
+  font-size: 15px;
+  background-color: white;
+
+  border: 2px solid #c4c4c4;
+  line-height: 2;
+  padding: 5px;
 }
