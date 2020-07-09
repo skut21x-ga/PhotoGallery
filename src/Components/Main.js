@@ -28,11 +28,14 @@ class Main extends Component {
         },
       ],
     };
+    this.removePhoto = this.removePhoto.bind(this);
   }
 
   removePhoto(postRemoved) {
     console.log(postRemoved.description);
-    // this.state.props[postRemoved].push
+    this.setState((state) => ({
+      posts: state.posts.filter((post) => post !== postRemoved),
+    }));
   }
 
   render() {

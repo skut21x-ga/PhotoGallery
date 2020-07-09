@@ -1,5 +1,6 @@
 import React from "react";
 import Photo from "./Photo";
+import PropTypes from "prop-types";
 
 function PhotoGallery(props) {
   return (
@@ -10,5 +11,10 @@ function PhotoGallery(props) {
     </div>
   );
 }
+
+PhotoGallery.propTypes = {
+  posts: PropTypes.array.isRequired,
+  onRemovePhoto: PropTypes.func.isRequired,
+};
 
 export default PhotoGallery;
