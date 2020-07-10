@@ -32,7 +32,6 @@ class Main extends Component {
       screen: "photos", // will dispaly photos or addPhotos
     };
     this.removePhoto = this.removePhoto.bind(this);
-    this.navigate = this.navigate.bind(this);
   }
 
   componentDidMount() {}
@@ -49,10 +48,6 @@ class Main extends Component {
     this.setState((state) => ({
       posts: state.posts.filter((post) => post !== postRemoved),
     }));
-  }
-
-  navigate() {
-    this.setState({ screen: "AddPhoto" });
   }
 
   render() {

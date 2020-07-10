@@ -22,7 +22,6 @@ function Photo(props) {
       </figcaption>
       <div className="remove-button-container">
         <button
-          className="remove-button"
           onClick={() => {
             props.onRemovePhoto(post);
           }}
