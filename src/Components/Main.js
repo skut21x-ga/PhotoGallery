@@ -31,8 +31,17 @@ class Main extends Component {
     this.removePhoto = this.removePhoto.bind(this);
   }
 
+  componentDidMount() {}
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Old State:");
+    console.log(prevState.posts);
+    console.log("New State:");
+    console.log(this.state.posts);
+  }
+
   removePhoto(postRemoved) {
-    console.log(postRemoved.description);
+    // console.log(postRemoved.description);
     this.setState((state) => ({
       posts: state.posts.filter((post) => post !== postRemoved),
     }));
@@ -50,4 +59,5 @@ class Main extends Component {
     );
   }
 }
+
 export default Main;

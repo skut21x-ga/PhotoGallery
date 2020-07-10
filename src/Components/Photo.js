@@ -1,6 +1,12 @@
 import React from "react";
+// import PropTypes from "prop-types";
 
 function Photo(props) {
+  // Photo.propTypes = {
+  //   posts: PropTypes.object.isRequired,
+  //   onRemovePhoto: PropTypes.func.isRequired,
+  // };
+
   const post = props.post;
   return (
     <figure className="figure">
