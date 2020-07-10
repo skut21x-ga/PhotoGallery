@@ -4,10 +4,15 @@ import PropTypes from "prop-types";
 
 function PhotoGallery(props) {
   return (
-    <div className="photo-gallery">
-      {props.posts.map((post, index) => (
-        <Photo post={post} key={index} onRemovePhoto={props.onRemovePhoto} />
-      ))}
+    <div>
+      <button onClick={props.onNavigate} className="add-icon">
+        {" "}
+      </button>
+      <div className="photo-gallery">
+        {props.posts.map((post, index) => (
+          <Photo post={post} key={index} onRemovePhoto={props.onRemovePhoto} />
+        ))}
+      </div>
     </div>
   );
 }

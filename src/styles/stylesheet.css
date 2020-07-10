@@ -18,6 +18,16 @@ h1 {
   color: black;
 }
 
+h3 {
+  font-family: "billabong";
+  text-align: center;
+  font-size: 9rem;
+  font-weight: 100;
+  margin: 20px 0;
+  letter-spacing: -1px;
+  color: black;
+}
+
 @font-face {
   font-family: "billabong";
   src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix")
@@ -73,4 +83,14 @@ h1 {
   border: 2px solid #c4c4c4;
   line-height: 2;
   padding: 5px;
+}
+
+.add-icon {
+  margin: 20px auto;
+  display: table;
+  padding: 20px;
+  background: url("https://image.flaticon.com/icons/svg/60/60740.svg") center
+    no-repeat;
+  background-size: contain;
+  border: none;
 }

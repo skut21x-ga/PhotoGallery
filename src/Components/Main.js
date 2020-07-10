@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Title from "./Title";
 import PhotoGallery from "./PhotoGallery";
+import AddPhoto from "./AddPhoto";
 
 class Main extends Component {
   constructor() {
@@ -27,8 +28,10 @@ class Main extends Component {
             "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg",
         },
       ],
+      screen: "photos", // will dispaly photos or addPhotos
     };
     this.removePhoto = this.removePhoto.bind(this);
+    this.navigate = this.navigate.bind(this);
   }
 
   componentDidMount() {}
@@ -47,14 +50,28 @@ class Main extends Component {
     }));
   }
 
+  navigate() {
+    this.setState({ screen: "AddPhoto" });
+  }
+
   render() {
     return (
       <div>
-        <Title title={"Photo Gallery"}></Title>
-        <PhotoGallery
-          posts={this.state.posts}
-          onRemovePhoto={this.removePhoto}
-        />
+        {this.state.screen === "photos" && (
+          <div>
+            <Title title={"Photo Gallery"}></Title>
+            <PhotoGallery
+              posts={this.state.posts}
+              onRemovePhoto={this.removePhoto}
+              onNavigate={this.navigate}
+            />
+          </div>
+        )}
+        {this.state.screen === "AddPhoto" && (
+          <div>
+            <AddPhoto />
+          </div>
+        )}
       </div>
     );
   }
