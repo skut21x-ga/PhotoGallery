@@ -1,13 +1,17 @@
 import React from "react";
 import Photo from "./Photo";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function PhotoGallery(props) {
   return (
     <div>
-      <button onClick={props.onNavigate} className="add-icon">
+      <Link className="add-icon" to="/AddPhoto">
         {" "}
-      </button>
+      </Link>
+
+      {/* <button onClick={props.onNavigate} className="add-icon" /> */}
+
       <div className="photo-gallery">
         {props.posts.map((post, index) => (
           <Photo post={post} key={index} onRemovePhoto={props.onRemovePhoto} />
