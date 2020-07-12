@@ -1,5 +1,5 @@
 import React from "react";
-import Photo from "./Photo";
+import Photo from "./photo";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
