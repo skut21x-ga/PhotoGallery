@@ -29,7 +29,6 @@ class Main extends Component {
             "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg",
         },
       ],
-      screen: "photos", // will dispaly photos or addPhotos
     };
     this.removePhoto = this.removePhoto.bind(this);
   }
@@ -47,6 +46,12 @@ class Main extends Component {
     // console.log(postRemoved.description);
     this.setState((state) => ({
       posts: state.posts.filter((post) => post !== postRemoved),
+    }));
+  }
+
+  addPhoto(postSubmitted) {
+    this.setState((state) => ({
+      posts: state.posts.concat([postSubmitted]),
     }));
   }
 
@@ -68,7 +73,17 @@ class Main extends Component {
           )}
         />
 
-        <Route path="/AddPhoto" component={AddPhoto} />
+        <Route
+          path="/AddPhoto"
+          render={({ history }) => (
+            <AddPhoto
+              onAddPhoto={(addedPost) => {
+                this.addPhoto(addedPost);
+                history.push("/");
+              }}
+            />
+          )}
+        />
       </div>
     );
   }

@@ -10,6 +10,17 @@ class AddPhoto extends Component {
     console.log("New Photo Submitted from:");
     const imageURL = event.target.elements.URL.value;
     const description = event.target.elements.Caption.value;
+    const post = {
+      id: 0,
+      description: description,
+      imageLink: imageURL,
+    };
+    if (!description) {
+      console.log("WHAT!");
+    }
+    if (description && imageURL) {
+      this.props.onAddPhoto(post);
+    }
   }
 
   render() {
