@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Title from "./Title";
-import PhotoGallery from "./PhotoGallery";
-import AddPhoto from "./AddPhoto";
+import Title from "./title";
+import PhotoGallery from "./photogallery";
+import AddPhoto from "./addphoto";
 import { Route } from "react-router-dom";
 
 class Main extends Component {
